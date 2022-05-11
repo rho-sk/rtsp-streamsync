@@ -24,7 +24,7 @@ ENV PATH "$PATH:$HOME/bin"
 ENV PKG_CONFIG_PATH "$PKG_CONFIG_PATH:$HOME/ffmpeg_build/lib/pkgconfig"
 
 # patch video_cap for python 3.8
-COPY $HOME/stream_sync/patch/mv-extractor/py_video_cap.cpp  $HOME/video_cap/src
+COPY patch/mv-extractor/py_video_cap.cpp  $HOME/video_cap/src
 
 RUN cd $HOME/video_cap && \
   python3 setup.py install
